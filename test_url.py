@@ -66,37 +66,6 @@ EXPECTED_PATTERNS = [
     "https://www.amazon.com/2/seller/*/details"
 ]
 
-def test_url_clustering():
-    # First pass to train the patterns
-    cluster_urls(INPUT_URLS)
-    
-    # Second pass to get the actual results
-    result = sorted(set(cluster_urls(INPUT_URLS)))
-    expected = sorted(set(EXPECTED_PATTERNS))
-    
-    matches = 0
-    mismatches = []
-    
-    for i, (actual, expected) in enumerate(zip(result, expected)):
-        if actual == expected:
-            matches += 1
-        else:
-            mismatches.append({
-                'expected': expected,
-                'actual': actual
-            })
-    
-    success_rate = (matches / len(expected)) * 100
-    print(f"\nMatched {matches}/{len(expected)} patterns ({success_rate:.2f}%)")
-    
-    if mismatches:
-        print("\nMismatched patterns:")
-        for mismatch in mismatches:
-            print(f"Expected:  {mismatch['expected']}")
-            print(f"Got:       {mismatch['actual']}\n")
-    
-    assert matches == len(expected), f"Failed to match {len(expected) - matches} patterns"
-
 def test_individual_patterns():
     # First pass to train the patterns
     cluster_urls(INPUT_URLS)
