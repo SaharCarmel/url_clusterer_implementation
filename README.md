@@ -1,5 +1,7 @@
 # Tree Clustering Project
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/groundcover/tech_interview)
+
 This project clusters URLs based on their patterns.
 
 ## Docker Instructions
