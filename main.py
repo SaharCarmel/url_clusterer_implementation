@@ -1,6 +1,6 @@
 import sys
 import time
-from cluster import cluster_urls, Tree
+from src.cluster import cluster_urls, Tree
 
 def main(input_file):
     with open(input_file, 'r') as f:

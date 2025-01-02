@@ -1,5 +1,5 @@
 import pytest
-from cluster import cluster_urls
+from src.cluster import cluster_urls
 
 INPUT_URLS = [
     "https://www.github.com/user/abc/profile",
